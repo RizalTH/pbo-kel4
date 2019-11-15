@@ -9,11 +9,13 @@ package GameMath;
  *
  * @author Rizal
  */
-import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        //membuat objek baru m dari class Menu
         Menu m = new Menu();
+        //menjalankan method mulaiGame, dengan paramater m untuk data defaultnya
         m.mulaiGame(m);
+        //lalu menjalankan method menu, untuk pilih menu
         m.menu(m);
     }
 }
