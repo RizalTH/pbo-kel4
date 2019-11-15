@@ -11,17 +11,28 @@ import java.util.concurrent.ThreadLocalRandom;
 /**
  *
  * @author Didit
- */
-
+*/
+ 
 //subclass dari menu
 public class Pengurangan extends Menu{
     //membuat objek baru m2 untuk mengakses method dari menu
     Menu m2 = new Menu();
+    private int jawabpr;
     
     //Method
     //constructor untuk memanggil nama pemain yang tersimpan di class Menu
     public Pengurangan(String nama){
         this.nama = nama;
+    }
+    
+    
+    public void setJawabpr(int jawab){
+        this.jawabpr = jawab;
+    }
+    
+    //getter nama pemain
+    public int getJawabpr(){
+        return this.jawabpr;
     }
 
     //meng overriding method mulaiGame dari class Menu untuk menampilkan judul game
@@ -38,7 +49,6 @@ public class Pengurangan extends Menu{
         skor = 0;
         //melakukan perulangan
         while(run){
-            System.out.println("lives kamu " + lives);
             //ketika skor lebih dari 300
             if (skor > 300) {
                 run = false;
@@ -69,16 +79,16 @@ public class Pengurangan extends Menu{
                     System.out.println("Berapakah hasil dari " +x+ "-"+y+"?");
                     System.out.print("Jawab: ");
                     Scanner s3 = new Scanner(System.in);
-                    jawab = s3.nextInt();
-                    this.level = 1;
+                    setJawabpr(s3.nextInt());
+                    this.level=1;
                     //untuk menghitung serta menampilkan lives, skor dan level
-                    if (jawab == z){
+                    if (getJawabpr() == z){
                         skor += 4;
-                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
+                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");
                     } else {
                         skor -= 1;
                         lives -= 1;
-                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
+                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");
                     }       
                 //jika x lebih besar dari y
                 } else if (x > y){
@@ -88,16 +98,16 @@ public class Pengurangan extends Menu{
                     System.out.println("Berapakah hasil dari " +x+ "-"+y+"?");
                     System.out.print("Jawab: ");
                     Scanner s5 = new Scanner(System.in);
-                    jawab = s5.nextInt();
-                    this.level = 1;
+                    jawabpr = s5.nextInt();
+                    this.level=1;
                     //untuk menghitung serta menampilkan lives, skor dan level
-                    if (jawab == z){
+                    if (jawabpr == z){
                         skor += 4;
-                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
+                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");
                     } else {
                         skor -= 1;
                         lives -= 1;
-                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
+                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");
                     }  
                 }
             //jika skor 0 - 100
@@ -118,17 +128,16 @@ public class Pengurangan extends Menu{
                     System.out.println("Berapakah hasil dari " +x+ "-"+y+"?");
                     System.out.print("Jawab: ");
                     Scanner s6 = new Scanner(System.in);
-                    jawab = s6.nextInt();
-                    this.level = 1;
+                    setJawabpr(s6.nextInt());
+                    this.level=1;
                     //untuk menghitung serta menampilkan lives, skor dan level
-                    if (jawab == z){
+                    if (getJawabpr() == z){
                         skor += 4;
-                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
+                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");
                     } else {
                         skor -= 1;
                         lives -= 1;
-                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
-                    }  
+                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");                  }  
                 //jika x lebih besar dari y
                 } else if (x > y){
                     //melakukan operasi hitung pengurangan dan hasilnya disimpan di z untuk pengecekan jawaban pemain
@@ -137,20 +146,20 @@ public class Pengurangan extends Menu{
                     System.out.println("Berapakah hasil dari " +x+ "-"+y+"?");
                     System.out.print("Jawab: ");
                     Scanner s7 = new Scanner(System.in);
-                    jawab = s7.nextInt();
+                    setJawabpr(s7.nextInt());
                     this.level = 1;
                     //untuk menghitung serta menampilkan lives, skor dan level
-                    if (jawab == z){
+                    if (getJawabpr() == z){
                         skor += 4;
-                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
+                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");
                     } else {
                         skor -= 1;
                         lives -= 1;
-                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
+                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");
                     }  
                 }
             //jika skor 100-200
-            } else if (skor >= 100 && skor <= 200){
+            } else if (skor > 100 && skor <= 200){
                 //x adalah bilangan pertama yang di random antara angka -10 - -1
                 x = ThreadLocalRandom.current().nextInt(-10, 0);
                 //y adalah bilangan kedua yang di random antara angka -10 - -1
@@ -165,15 +174,16 @@ public class Pengurangan extends Menu{
                 }
                 System.out.print("Jawab: ");
                 Scanner s8 = new Scanner(System.in);
-                jawab = s8.nextInt();
+                setJawabpr(s8.nextInt());
+                this.level=2;
                 //untuk menghitung serta menampilkan lives, skor dan level
-                if (jawab == z){
+                if (getJawabpr() == z){
                         skor += 4;
-                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
+                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");
                     } else {
                         skor -= 1;
                         lives -= 1;
-                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
+                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");
                     }      
             } else if (skor >= 200 && skor <= 300){
                 //x adalah bilangan pertama yang di random antara angka -10 - 10
@@ -201,19 +211,18 @@ public class Pengurangan extends Menu{
                 }
                 System.out.print("Jawab: ");
                 Scanner s9 = new Scanner(System.in);
-                jawab = s9.nextInt();
-                this.level = 3;
+                setJawabpr(s9.nextInt());
+                this.level=3;
                 //untuk menghitung serta menampilkan lives, skor dan level
-                if (jawab == z){
+                if (getJawabpr() == z){
                         skor += 4;
-                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
+                        System.out.println("[Selamat "+m.getNama()+", Anda benar”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");
                     } else {
                         skor -= 1;
                         lives -= 1;
-                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: "+level+"]");
+                        System.out.println("Selamat "+m.getNama()+", Wah, salah deh”][Skor: "+skor+"][Lives: "+lives+"][Level: " + level+"]");
                     }  
             }
         }
     }
 }
-
